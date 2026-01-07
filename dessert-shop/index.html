@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desserts - Dessert Shop</title>
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Main Content -->
+    <main class="main-content">
+      <h1 class="page-title">Desserts</h1>
+      
+      <!-- Desserts Grid -->
+      <div id="desserts-grid" class="desserts-grid">
+        <!-- Dessert cards will be dynamically rendered here -->
+      </div>
+    </main>
+
+    <!-- Sidebar Cart -->
+    <aside class="cart-sidebar">
+      <h2 class="cart-title">Your Cart (<span id="cart-count">0</span>)</h2>
+      
+      <!-- Empty Cart State -->
+      <div id="empty-cart" class="empty-cart">
+        <img src="./asserts/illustration-empty-cart.svg" alt="Empty cart" class="empty-cart-icon">
+        <p class="empty-cart-text">Your added items will appear here</p>
+      </div>
+
+      <!-- Cart Items -->
+      <div id="cart-items" class="cart-items hidden">
+        <!-- Cart items will be dynamically rendered here -->
+      </div>
+
+      <!-- Order Total -->
+      <div id="order-total" class="order-total hidden">
+        <div class="order-total-row">
+          <span>Order Total</span>
+          <span class="order-total-price" id="order-total-price">$0.00</span>
+        </div>
+      </div>
+
+      <!-- Carbon Neutral Badge -->
+      <div id="carbon-neutral" class="carbon-neutral hidden">
+        <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10.5 0C8.64348 0 6.83427 0.549495 5.2919 1.57873C3.74954 2.60796 2.54009 4.07215 1.8219 5.78628C1.10372 7.5004 0.90966 9.38845 1.26375 11.2106C1.61784 13.0328 2.50628 14.7062 3.81282 16.0128C5.11936 17.3193 6.79276 18.2078 8.61494 18.5619C10.4371 18.916 12.3252 18.7219 14.0393 18.0037C15.7534 17.2855 17.2176 16.0761 18.2468 14.5337C19.276 12.9913 19.8255 11.1821 19.8255 9.32558C19.8255 6.86377 18.8475 4.5029 17.1127 2.76801C15.3778 1.03312 13.017 0.0551221 10.5551 0.0551221L10.5 0ZM10.5 17.2093C8.99066 17.2093 7.51473 16.7618 6.25618 15.9229C4.99763 15.0839 4.01295 13.8903 3.42336 12.4914C2.83377 11.0924 2.66571 9.54916 2.93948 8.05669C3.21325 6.56421 3.91711 5.18755 4.9631 4.09302C6.00909 2.99848 7.34893 2.23463 8.81582 1.89755C10.2827 1.56047 11.8177 1.66434 13.2258 2.19683C14.634 2.72931 15.8577 3.66962 16.7461 4.90081C17.6344 6.132 18.1465 7.59355 18.2209 9.10233L18.2209 9.32558C18.2209 11.3462 17.4178 13.2839 15.9874 14.7143C14.557 16.1447 12.6194 16.9478 10.5988 16.9478L10.5 17.2093Z" fill="#1EA575"/>
+          <path d="M7.30233 10.6977L9.5814 12.9768L14.1396 8.41862L13.0233 7.30233L9.5814 10.7442L8.41862 9.5814L7.30233 10.6977Z" fill="#1EA575"/>
+        </svg>
+        <span>This is a <strong>carbon-neutral</strong> delivery</span>
+      </div>
+
+      <!-- Confirm Order Button -->
+      <button id="confirm-order-btn" class="confirm-order-btn hidden">
+        Confirm Order
+      </button>
+    </aside>
+  </div>
+
+  <!-- Order Confirmation Modal -->
+  <div id="order-modal" class="modal hidden">
+    <div class="modal-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="./asserts/icon-order-confirmed.svg" alt="Order confirmed" class="modal-icon">
+        <h2 class="modal-title">Order Confirmed</h2>
+        <p class="modal-subtitle">We hope you enjoy your food!</p>
+      </div>
+
+      <div class="modal-body">
+        <div id="modal-items" class="modal-items">
+          <!-- Order items will be rendered here -->
+        </div>
+
+        <div class="modal-total">
+          <span>Order Total</span>
+          <span class="modal-total-price" id="modal-total-price">$0.00</span>
+        </div>
+      </div>
+
+      <button id="start-new-order-btn" class="start-new-order-btn">
+        Start New Order
+      </button>
+    </div>
+  </div>
+
+  <script type="module" src="./dist/main.js"></script>
+</body>
+</html>
